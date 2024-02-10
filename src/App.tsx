@@ -50,7 +50,7 @@ export function App() {
       : notes
 
   return (
-    <div className="mx-auto max-w-6xl my-12 space-y-6">
+    <div className="mx-auto max-w-6xl my-12 space-y-6 px-5 md:px-5 lg:px-1">
       <img src={logo} alt="NLW Expert" />
 
       <form
@@ -63,13 +63,13 @@ export function App() {
           type="text"
           placeholder="Busque em suas notas..."
           onChange={handleSearch}
-          className="w-full bg-transparent text-3xl font-semibold tracking-tight placeholder:text-slate-500 outline-none"
+          className="w-full bg-transparent text-2xl font-semibold tracking-tight placeholder:text-slate-500 outline-none sm:text-3xl"
         />
       </form>
 
       <div className="h-px bg-slate-700" />
 
-      <div className="grid grid-cols-3 gap-6 auto-rows-[250px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[250px]">
         <NewNoteCard onNoteCreated={onNoteCreated} />
         {filteredNotes.map((note) => (
           <NoteCard key={note.id} note={note} />
