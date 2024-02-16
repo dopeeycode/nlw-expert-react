@@ -3,6 +3,7 @@ import logo from './assets/logo-nlw-expert.svg'
 import { NewNoteCard } from './components/new-note-card'
 import { NoteCard } from './components/note-card'
 import { v4 as uuid } from 'uuid'
+import { toast } from 'sonner'
 
 interface INote {
   id: string
@@ -40,6 +41,7 @@ export function App() {
     const notesArray = notes.filter((note) => note.id !== id)
 
     setNotes(notesArray)
+    toast.success('Nota deletada')
 
     localStorage.setItem('@nlw-expert/notes', JSON.stringify(notesArray))
   }
